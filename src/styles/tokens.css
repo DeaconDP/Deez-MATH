@@ -1,0 +1,40 @@
+:root {
+  --bg: #0a0f0e;
+  --bg-elevated: #121a18;
+  --bg-wash: #0e1614;
+  --fg: #e8f2ef;
+  --muted: #8aa39a;
+  --line: #24332e;
+  --accent: #2ee6c5;
+  --accent-dim: #1a9e87;
+  --accent-2: #f0c95a;
+  --danger: #ff6b6b;
+  --ok: #6dffb0;
+  --glow: color-mix(in srgb, var(--accent) 28%, transparent);
+
+  --font-display: 'Syne', system-ui, sans-serif;
+  --font-body: 'IBM Plex Mono', ui-monospace, monospace;
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+
+  --radius: 4px;
+  --tap: 44px;
+  --max: 40rem;
+  --header-h: 3.25rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
