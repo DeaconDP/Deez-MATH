@@ -8,6 +8,9 @@
   --accent: #2ee6c5;
   --accent-dim: #1a9e87;
   --accent-2: #f0c95a;
+  --discoverer-claude: #ff8a2b;
+  --discoverer-openai: #ffffff;
+  --discoverer-human: #f0c95a;
   --danger: #ff6b6b;
   --ok: #6dffb0;
   --glow: color-mix(in srgb, var(--accent) 28%, transparent);

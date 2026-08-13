@@ -1,7 +1,11 @@
 import { Toggle } from './Toggle'
 import { useDepth } from '../hooks/useDepth'
 
-export function DepthToggle() {
+type Props = {
+  compact?: boolean
+}
+
+export function DepthToggle({ compact = false }: Props) {
   const { deep, setDeep } = useDepth()
   return (
     <Toggle
@@ -9,7 +13,8 @@ export function DepthToggle() {
       checked={deep}
       onChange={setDeep}
       label="Go deeper"
-      hint="Show formal statements and jargon"
+      hint="Show formal math"
+      compact={compact}
     />
   )
 }

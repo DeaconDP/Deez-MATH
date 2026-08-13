@@ -1,4 +1,5 @@
 import { NavLink, Outlet } from 'react-router-dom'
+import { DepthToggle } from './DepthToggle'
 
 export function AppShell() {
   return (
@@ -17,12 +18,20 @@ export function AppShell() {
             Advances
           </NavLink>
           <NavLink
+            to="/open-problems"
+            className={({ isActive }) => (isActive ? 'active' : undefined)}
+            style={({ isActive }) => ({ color: isActive ? 'var(--fg)' : undefined })}
+          >
+            Open
+          </NavLink>
+          <NavLink
             to="/applications"
             style={({ isActive }) => ({ color: isActive ? 'var(--fg)' : undefined })}
           >
             Apps
           </NavLink>
         </nav>
+        <DepthToggle compact />
       </header>
       <main className="main">
         <Outlet />

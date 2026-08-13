@@ -4,6 +4,8 @@ import { DepthProvider } from './hooks/useDepth'
 import { Home } from './pages/Home'
 import { BreakthroughList } from './pages/BreakthroughList'
 import { BreakthroughDetail } from './pages/BreakthroughDetail'
+import { OpenProblemList } from './pages/OpenProblemList'
+import { OpenProblemDetail } from './pages/OpenProblemDetail'
 import { Applications } from './pages/Applications'
 
 export default function App() {
@@ -15,6 +17,8 @@ export default function App() {
             <Route index element={<Home />} />
             <Route path="breakthroughs" element={<BreakthroughList />} />
             <Route path="breakthroughs/:id" element={<BreakthroughDetail />} />
+            <Route path="open-problems" element={<OpenProblemList />} />
+            <Route path="open-problems/:id" element={<OpenProblemDetail />} />
             <Route path="applications" element={<Applications />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Route>

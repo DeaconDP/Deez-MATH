@@ -1,7 +1,6 @@
 import { useEffect } from 'react'
 import { Link, Navigate, useLocation, useParams } from 'react-router-dom'
-import { getBreakthrough, SERIES_LABELS } from '../data/breakthroughs'
-import { DepthToggle } from '../components/DepthToggle'
+import { DOMAIN_LABELS, getBreakthrough, SERIES_LABELS } from '../data/breakthroughs'
 import { useDepth } from '../hooks/useDepth'
 import { DemoFor } from '../demos'
 
@@ -24,17 +23,17 @@ export function BreakthroughDetail() {
       <Link className="back" to="/breakthroughs">
         ← All advances
       </Link>
-      <p className="field-tag">
-        #{b.importance} · {SERIES_LABELS[b.series]} · {b.when} · {b.field}
-      </p>
       <h1 className="page-title">{b.title}</h1>
       <p className="page-sub">{b.glance}</p>
-
-      <div className="btn-row">
-        <a className="btn" href="#demo">
-          Try the demo
-        </a>
-      </div>
+      <p className="field-tag">
+        {SERIES_LABELS[b.series]} · {b.when} · {b.field}
+      </p>
+      <p className="discoverer-detail">
+        Discovered:{' '}
+        <span className={`discoverer discoverer--${b.discoveredBy.kind}`}>
+          {b.discoveredBy.label}
+        </span>
+      </p>
 
       <section className="prose" aria-label="Plain explanation">
         <h2 className="h2">In plain words</h2>
@@ -44,8 +43,6 @@ export function BreakthroughDetail() {
         <h2 className="h2">The claimed result</h2>
         <p>{b.plain.result}</p>
       </section>
-
-      <DepthToggle />
 
       {deep ? (
         <section className="deep-panel" aria-label="Deeper mathematics">
@@ -66,29 +63,36 @@ export function BreakthroughDetail() {
         </section>
       ) : null}
 
+      <div className="btn-row">
+        <a className="btn" href="#demo">
+          Try the demo
+        </a>
+      </div>
+
       <section id="demo" aria-label="Application demo">
         <DemoFor id={b.demoId} />
       </section>
 
-      <h2 className="h2">Applications</h2>
-      <ul className="list">
+      <section className="apps-section" aria-label="Applications">
+        <h2 className="h2">Applications</h2>
         {b.applications.map((a) => (
-          <li key={a.id}>
-            <Link className="row" to={`/applications#${a.id}`}>
-              <span className="row-num">→</span>
-              <span>
-                <span className="row-title">{a.title}</span>
-                <span className="row-glance">{a.blurb}</span>
-              </span>
+          <article key={a.id} className="app-block" id={`app-${a.id}`}>
+            <h3 className="app-block-title">{a.title}</h3>
+            <p className="field-tag">{DOMAIN_LABELS[a.domain]}</p>
+            <p className="app-block-detail">{a.detail}</p>
+            <p className="app-block-commercial">
+              <span className="app-commercial-label">Commercial angle</span>
+              {a.commercial}
+            </p>
+            <Link className="app-block-link" to={`/applications#${a.id}`}>
+              See in applications index
             </Link>
-          </li>
+          </article>
         ))}
-      </ul>
+      </section>
 
       <details>
-        <summary className="back" style={{ cursor: 'pointer', listStyle: 'none' }}>
-          Sources
-        </summary>
+        <summary className="sources-summary">Sources</summary>
         <ul className="sources">
           {b.sources.map((s) => (
             <li key={s.href}>

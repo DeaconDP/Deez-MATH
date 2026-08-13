@@ -10,13 +10,14 @@ export const landmarkBreakthroughs: Breakthrough[] = [
     title: 'Jacobian conjecture falls (dimensions ≥ 3)',
     field: 'Algebraic geometry',
     glance:
-      'An 87-year-old conjecture dies in three dimensions and above — with a tiny explicit map.',
+      'An 87-year-old invertibility guess dies in three dimensions and above — with a tiny explicit map.',
+    discoveredBy: { kind: 'claude', label: 'Claude Fable 5' },
     plain: {
-      what: 'The Jacobian conjecture said: if a polynomial map from complex n-space to itself has a constant nonzero Jacobian determinant, then it must have a polynomial inverse. In July 2026, Levent Alpöge announced an explicit three-variable counterexample found with Claude Fable 5 — constant Jacobian, but not injective, so no inverse. Padding with identity coordinates kills the conjecture in every dimension n ≥ 3. Dimension 2 remains open.',
+      what: 'The old guess said: if a polynomial map from complex n-space to itself has a constant nonzero “stretch factor,” then it must have a polynomial inverse. In July 2026, Levent Alpöge announced a tiny three-variable counterexample found with Claude Fable 5 — constant stretch factor, but two different inputs share an output, so no inverse. Padding with unused coordinates kills the guess in every dimension 3 and up. The plane case is still open.',
       whyItMatters:
-        'This was one of the most famous open problems in affine algebraic geometry. A short, checkable counterexample resets decades of “maybe it’s true in all dimensions” intuition and focuses the open case on the plane.',
+        'This was one of the most famous open problems about polynomial maps. A short, checkable counterexample resets decades of “maybe it’s true in all dimensions” intuition and focuses the open case on the plane.',
       result:
-        'Explicit Keller map F: ℂ³ → ℂ³ with det Jac = −2 that sends three distinct points to one image; hence the Jacobian conjecture is false for all n ≥ 3.',
+        'An explicit three-variable polynomial map with constant nonzero stretch factor that is not one-to-one — so the conjecture is false for all dimensions 3 and up.',
     },
     deep: {
       statement:
@@ -40,15 +41,23 @@ export const landmarkBreakthroughs: Breakthrough[] = [
     applications: [
       {
         id: 'affine-geometry',
-        title: 'Affine algebraic geometry',
+        title: 'Polynomial maps & invertibility',
         domain: 'geometry',
-        blurb: 'Removes a false global invertibility hope for polynomial maps in high dimension.',
+        blurb: 'Polynomial maps in 3+ dimensions can look invertible and still collide.',
+        detail:
+          'Geometers and computer-algebra users often ask when a polynomial change of coordinates has a polynomial inverse — a clean “undo” button. For decades, a constant nonzero stretch factor looked like a promising shortcut to that answer in every dimension. The counterexample kills that shortcut above the plane: constant stretch no longer guarantees a unique inverse, so tools and proofs that leaned on the old hope need a different test.',
+        commercial:
+          'Computer-algebra vendors (Mathematica, Maple, and open-source rivals with paid support) sell symbolic invertibility and change-of-coordinate tooling. Their invertibility checks can no longer lean on the dead shortcut — an update they can now advertise as machine-verified.',
       },
       {
         id: 'cas-search',
         title: 'Computer-algebra search',
         domain: 'complexity',
-        blurb: 'Shows short counterexamples can hide in huge polynomial search spaces.',
+        blurb: 'Tiny counterexamples can hide in huge spaces of polynomial maps.',
+        detail:
+          'Finding the three-variable map meant searching a vast space of coefficients for a short witness that humans had missed for decades. That is a template for hard search: the “interesting” object can be tiny while the search space is enormous. It nudges tool-builders to mix clever prompting, machine search, and machine-checked verification rather than assuming short answers are easy to spot by hand.',
+        commercial:
+          'AI-for-math companies sell exactly this loop — model-driven search plus machine-checked verification — and a famous 87-year-old scalp is their best sales demo. Expect it in every pitch deck for verified-reasoning tooling.',
       },
     ],
     demoId: 'jacobian',
@@ -71,13 +80,14 @@ export const landmarkBreakthroughs: Breakthrough[] = [
     title: 'Erdős unit-distance conjecture disproved',
     field: 'Discrete geometry',
     glance:
-      'You can pack more equal lengths among n points than Erdős thought — a polynomial improvement.',
+      'You can pack more equal lengths among n points than Erdős thought — a real polynomial improvement.',
+    discoveredBy: { kind: 'openai', label: 'OpenAI (internal)' },
     plain: {
-      what: 'Erdős asked how many pairs among n points in the plane can sit at distance exactly 1. He conjectured the count is at most n^{1+o(1)}. In May 2026 an internal OpenAI model produced a counterexample family with at least n^{1+δ} unit distances for a fixed δ > 0. Human writeups and later work made the exponent explicit (around 1.014).',
+      what: 'Erdős asked how many pairs among n points in the plane can sit at distance exactly 1. He guessed the count stays barely above linear in n. In May 2026 an internal OpenAI model found infinite families with a lasting power-law boost above linear. Human writeups later made the boost explicit (about n to the 1.014).',
       whyItMatters:
-        'This is one of the most famous problems in combinatorial geometry. Beating the grid-style lower bound with algebraic number theory tools was widely unexpected.',
+        'This is one of the most famous problems in combinatorial geometry. Beating the old grid-style constructions was widely unexpected.',
       result:
-        'Infinite families of n-point sets with ≥ n^{1+δ} unit distances (δ > 0 fixed; later sharpened to an explicit ≈ 0.014).',
+        'Infinite families of n-point sets with more than n^{1+δ} equal-length pairs for a fixed positive δ (later sharpened to about 0.014).',
     },
     deep: {
       statement:
@@ -101,15 +111,23 @@ export const landmarkBreakthroughs: Breakthrough[] = [
     applications: [
       {
         id: 'sensor-networks',
-        title: 'Geometric networks',
+        title: 'Fixed-range point networks',
         domain: 'networks',
-        blurb: 'Bounds how often a fixed range can recur in planar point configurations.',
+        blurb: 'Equal-distance pairs can be denser among planar points than old guesses allowed.',
+        detail:
+          'Think of sensors, radio links, or robots that care about a fixed range: how many pairs among n points can sit at that exact distance? The old Erdős guess said “barely more than linear.” The new constructions show a lasting power-law boost is possible, so planners and theorists cannot treat near-linear as the extremal story. Upper bounds still exist, but the floor on “how crowded equal ranges can get” moved up.',
+        commercial:
+          'Planning software for fixed-range radios, sensor grids, and drone swarms prices in how many exact-range pairs can coexist. The new density floor feeds those worst-case interference and capacity models — a quiet input, not a shipped feature.',
       },
       {
         id: 'discrete-geom-apps',
-        title: 'Discrete geometry toolkit',
+        title: 'Extremal distance graphs',
         domain: 'geometry',
-        blurb: 'Forces revised intuitions about extremal distance graphs in the plane.',
+        blurb: 'Revises how dense equal-length graphs can be in the plane.',
+        detail:
+          'Discrete geometers use unit-distance graphs as a basic stress test for point configurations. Beating the old constructions forces rewritten intuition about extremal examples and which algebraic tricks can create many equal lengths. Later work that cites unit-distance bounds now has a higher constructive baseline to compare against.',
+        commercial:
+          'No direct product yet. The nearest commercial edge is computational-geometry libraries and layout tools whose worst-case guarantees quote distance-graph bounds.',
       },
     ],
     demoId: 'unit-distance',
@@ -132,13 +150,14 @@ export const landmarkBreakthroughs: Breakthrough[] = [
     title: 'Kakeya & restriction advances (Wang)',
     field: 'Harmonic analysis',
     glance:
-      'Major progress on 3D Kakeya and related distance / restriction problems — Fields Medal 2026.',
+      'Major progress on thin 3D sets that still point every way — Fields Medal 2026.',
+    discoveredBy: { kind: 'human', label: 'Hong Wang' },
     plain: {
-      what: 'A Kakeya set must contain a unit line segment in every direction. How small can its volume be? Hong Wang’s work (recognized with a 2026 Fields Medal) made major advances on the Kakeya problem in three dimensions, alongside Fourier restriction, Falconer distance sets, and Furstenberg sets.',
+      what: 'Imagine a set that contains a unit needle in every direction. How small can its volume be? Hong Wang’s work (recognized with a 2026 Fields Medal) made major advances on that question in three dimensions, along with related problems about distances and how waves concentrate.',
       whyItMatters:
-        'Kakeya and restriction sit at the heart of modern harmonic analysis and connect to PDEs and geometric measure theory. Progress here reshapes what “thin but direction-rich” sets can look like.',
+        'These questions sit at the heart of modern harmonic analysis and connect to wave equations and geometric measure theory. Progress reshapes what “thin but direction-rich” sets can look like.',
       result:
-        'Major advances on 3D Kakeya and related multiscale / decoupling techniques (Fields Medal citation, ICM 2026).',
+        'Major advances on the 3D needle-in-every-direction problem and related wave / distance techniques (Fields Medal, ICM 2026).',
     },
     deep: {
       statement:
@@ -162,15 +181,23 @@ export const landmarkBreakthroughs: Breakthrough[] = [
     applications: [
       {
         id: 'wave-imaging',
-        title: 'Wave equations & imaging',
+        title: 'Waves & imaging estimates',
         domain: 'analysis',
-        blurb: 'Local smoothing / restriction ideas feed PDE and imaging estimates.',
+        blurb: 'Tools that control waves also sharpen PDE and imaging bounds.',
+        detail:
+          'Local smoothing and Fourier restriction estimates feed into wave equations and imaging: how energy concentrates, how singularities propagate, and what resolution you can hope for. Wang’s program advances those analytic levers, so researchers modeling waves or reconstructing from limited measurements inherit sharper structural bounds — not a new consumer scanner overnight, but better math under the hood.',
+        commercial:
+          'Upstream R&D for industries that pay for resolution: medical ultrasound, seismic imaging in energy exploration, and radar. Sharper wave-concentration estimates shape what reconstruction guarantees those vendors can honestly claim.',
       },
       {
         id: 'gmt',
-        title: 'Geometric measure theory',
+        title: 'Thin sets that point every way',
         domain: 'geometry',
-        blurb: 'Controls how thin sets can still point every way.',
+        blurb: 'Limits how small a set can be while still covering every direction.',
+        detail:
+          'Kakeya-type questions ask how thin a set can be while still containing a needle in every direction. That geometry sits next to geometric measure theory and distance problems. Progress redraws what “thin but direction-rich” can look like in three dimensions, which cascades into related packing, distance, and fractal questions mathematicians use as benchmarks.',
+        commercial:
+          'Little direct commercial use — this is core research infrastructure. Its value reaches industry indirectly, through the wave and imaging estimates above.',
       },
     ],
     demoId: 'kakeya',
@@ -193,13 +220,14 @@ export const landmarkBreakthroughs: Breakthrough[] = [
     title: 'O-minimality → arithmetic geometry (Tsimerman)',
     field: 'Arithmetic geometry',
     glance:
-      'O-minimal geometry becomes a workhorse for algebraicity theorems — Fields Medal 2026.',
+      'A “tame geometry” toolkit becomes a workhorse for algebraicity theorems — Fields Medal 2026.',
+    discoveredBy: { kind: 'human', label: 'Jacob Tsimerman' },
     plain: {
-      what: 'Jacob Tsimerman’s program made o-minimality a core method in arithmetic and complex algebraic geometry, playing a decisive role in results such as Griffiths’ conjecture on period maps and the André–Oort conjecture for Siegel modular varieties.',
+      what: 'Jacob Tsimerman’s program made a tame real-geometry toolkit a core method in number theory and complex geometry. It played a decisive role in proving when certain “special” points and period images must be algebraic, including key cases of long-open algebraicity conjectures.',
       whyItMatters:
-        'These results control when “special” points and period images are algebraic — deep structure in moduli spaces that number theorists and geometers both need.',
+        'These results control when special points and period images stay algebraic — deep structure in moduli spaces that number theorists and geometers both need.',
       result:
-        'O-minimality recast as a fundamental method; central algebraicity conjectures settled in key cases (Fields citation).',
+        'Tame geometry recast as a fundamental method; central algebraicity conjectures settled in key cases (Fields citation).',
     },
     deep: {
       statement:
@@ -222,15 +250,23 @@ export const landmarkBreakthroughs: Breakthrough[] = [
     applications: [
       {
         id: 'moduli',
-        title: 'Moduli & special points',
+        title: 'Special points on moduli spaces',
         domain: 'number-theory',
-        blurb: 'Predicts when arithmetic special loci are algebraic rather than transcendental soup.',
+        blurb: 'Tells when arithmetic “special” loci must be algebraic, not wild.',
+        detail:
+          'Number theorists study moduli spaces that package families of geometric objects and ask which special points stay algebraic. Tame-geometry methods give a workhorse for proving those algebraicity statements in key cases. Practically, that means clearer predictions about which arithmetic loci behave rigidly — and fewer places where transcendental chaos was still plausible.',
+        commercial:
+          'Mostly pre-commercial. The nearest edge is computational number theory software (Magma licenses, SageMath support) and crypto research labs that compute with special points on elliptic-curve moduli.',
       },
       {
         id: 'period-maps',
-        title: 'Period maps',
+        title: 'Period maps & Hodge data',
         domain: 'geometry',
-        blurb: 'Algebraicity of period images organizes Hodge-theoretic data.',
+        blurb: 'Organizes when period images stay algebraic.',
+        detail:
+          'Period maps package Hodge-theoretic data about families of varieties. Knowing when their images are algebraic is a structural filter for geometers: which data can be captured by algebraic equations, and which cannot. The tame-geometry toolkit turned those filters into theorems in central cases, tightening how researchers classify and compute with that data.',
+        commercial:
+          'No direct commercial use today — this is classification infrastructure for pure geometry. Honest answer: the payoff horizon is measured in decades, not quarters.',
       },
     ],
     demoId: 'andre-oort',
@@ -249,13 +285,14 @@ export const landmarkBreakthroughs: Breakthrough[] = [
     title: 'Cohen–Lenstra / arithmetic statistics breakthrough',
     field: 'Number theory',
     glance:
-      'A new framework advances Gauss-inspired questions about average class-group behavior.',
+      'A new framework advances Gauss-inspired questions about typical number-field behavior.',
+    discoveredBy: { kind: 'human', label: 'Human research' },
     plain: {
-      what: 'Inspired by Gauss’s composition of quadratic forms, the Cohen–Lenstra heuristics predict average sizes of class groups. Aaron Landesman and Ishan Levy developed a new framework that goes a long way toward proving these statistics, and proved function-field versions of related Poonen–Rains and Malle conjectures.',
+      what: 'Inspired by Gauss, number theorists have long guessed how “typical” number fields behave — especially how often unique factorization fails. Aaron Landesman and Ishan Levy developed a new framework that goes a long way toward proving those average statistics, and proved related statements in the function-field setting.',
       whyItMatters:
-        'Arithmetic statistics is becoming central in number theory. Better average predictions for class groups and Galois groups guide what “random” number fields look like — with echoes in cryptography and computational number theory.',
+        'Average predictions for number fields guide what “random” arithmetic looks like — with echoes in cryptography and computational number theory.',
       result:
-        'New framework toward Cohen–Lenstra; function-field proofs of Poonen–Rains and Malle-type statements (reported Aug 2026).',
+        'A new framework toward the classic average class-group guesses, plus function-field proofs of related statistical conjectures (reported Aug 2026).',
     },
     deep: {
       statement:
@@ -273,20 +310,32 @@ export const landmarkBreakthroughs: Breakthrough[] = [
           term: 'Cohen–Lenstra heuristics',
           def: 'Predicted probability distributions for class-group structures.',
         },
+        {
+          term: 'Poonen–Rains / Malle',
+          def: 'Related conjectures about average Galois and Selmer-type statistics; function-field cases proved in this work.',
+        },
       ],
     },
     applications: [
       {
         id: 'random-fields',
-        title: 'Random number fields',
+        title: 'Typical number fields',
         domain: 'number-theory',
-        blurb: 'Predicts typical class-group sizes when sampling fields.',
+        blurb: 'Predicts how class groups behave for a “random” number field.',
+        detail:
+          'When you sample many number fields, how often does unique factorization fail, and how large are the class groups? Cohen–Lenstra-style averages are the standard guess. A stronger framework toward those averages (and related function-field proofs) gives mathematicians a firmer picture of typical arithmetic — the baseline they compare rare examples against.',
+        commercial:
+          'Average-case class-group behavior feeds parameter choices in number-theoretic cryptography — the kind of analysis standards bodies and security consultancies pay specialists to produce.',
       },
       {
         id: 'crypto-nt',
         title: 'Computational number theory',
         domain: 'crypto',
-        blurb: 'Average-case structure informs hardness and algorithm design intuitions.',
+        blurb: 'Average-case field structure guides hardness and algorithm intuition.',
+        detail:
+          'Cryptographers and computational number theorists care about average-case structure: what happens for typical inputs, not only worst-case monsters. Better statistical control of class groups and related Galois data informs which algorithms look promising and which hardness stories are plausible. This is guidance for research design, not a drop-in cipher change.',
+        commercial:
+          'Cryptanalysis teams and HSM vendors track average-case structure results when judging which number-theoretic assumptions are safe to build products on. This sharpens that judgment; it does not change any shipped cipher.',
       },
     ],
     demoId: 'cohen-lenstra',
@@ -305,13 +354,14 @@ export const landmarkBreakthroughs: Breakthrough[] = [
     title: 'Erdős #728 — first autonomous AI resolve',
     field: 'Combinatorial number theory',
     glance:
-      'A factorial-divisibility Erdős problem solved by GPT-5.2 Pro + Lean (Aristotle) with no prior paper.',
+      'A factorial-divisibility Erdős puzzle solved by GPT-5.2 Pro + Lean with no prior paper.',
+    discoveredBy: { kind: 'openai', label: 'GPT-5.2 Pro + Lean' },
     plain: {
-      what: 'Erdős problem #728 asks whether factorial divisibility can achieve a logarithmic gap infinitely often under natural size constraints. In January 2026, GPT-5.2 Pro produced a proof that Harmonic’s Aristotle formalized in Lean — widely regarded as the first Erdős problem fully resolved autonomously by AI (not a literature lookup).',
+      what: 'Erdős problem #728 asks whether certain factorial divisibility patterns can leave a logarithmic-sized gap infinitely often. In January 2026, GPT-5.2 Pro produced a proof that Harmonic’s Aristotle checked in Lean — widely regarded as the first Erdős problem fully resolved by AI without looking up an old paper.',
       whyItMatters:
-        'Mathematically moderate, historically huge: it marks a shift from “AI finds old papers” to “AI writes new checkable proofs.” Terence Tao emphasized speed/autonomy over raw difficulty.',
+        'Mathematically moderate, historically huge: it marks a shift from “AI finds old papers” to “AI writes new checkable proofs.” Terence Tao emphasized speed and autonomy over raw difficulty.',
       result:
-        'For any 0 < C₁ < C₂ and small ε, infinitely many (a,b,n) exist with εn ≤ a,b ≤ (1−ε)n, a! b! | n! (a+b−n)!, and C₁ log n < a+b−n < C₂ log n.',
+        'Infinitely many triples of sizes where the factorial divisibility holds with a logarithmic-sized gap in the middle — under natural size constraints.',
     },
     deep: {
       statement:
@@ -335,15 +385,23 @@ export const landmarkBreakthroughs: Breakthrough[] = [
     applications: [
       {
         id: 'formal-proofs',
-        title: 'Formal proof pipelines',
+        title: 'AI → Lean proof pipelines',
         domain: 'foundations',
-        blurb: 'Template for AI draft → machine-checked Lean → human exposition.',
+        blurb: 'A working template: AI draft, machine check, then human writeup.',
+        detail:
+          'The #728 pipeline — model draft, Lean certificate, human exposition — is a reusable pattern for research tooling. Teams building theorem-proving stacks can treat it as a reference: clarify the statement, demand a kernel check, then simplify for humans. The math difficulty is moderate; the process lesson is the lasting application.',
+        commercial:
+          'Verified proof pipelines are already a business: Harmonic sells Aristotle, and chip, avionics, and crypto firms pay for machine-checked correctness. #728 is that market’s public proof-of-concept.',
       },
       {
         id: 'factorial-div',
-        title: 'Factorial / binomial arithmetic',
+        title: 'Factorial divisibility gaps',
         domain: 'number-theory',
-        blurb: 'Clarifies how large logarithmic gaps can be in divisibility constraints.',
+        blurb: 'Shows logarithmic gaps can recur in factorial divisibility patterns.',
+        detail:
+          'Combinatorial number theory cares how often factorial and binomial divisibility constraints leave room in the middle. The result pins down an infinite family with a logarithmic-sized gap under natural size constraints. That sharpens the landscape of related Erdős-style questions about how sparse or dense such patterns can be.',
+        commercial:
+          'Essentially none — the divisibility result itself is a curiosity. The commercial story of #728 is the proof pipeline, not the theorem.',
       },
     ],
     demoId: 'erdos-728',
@@ -366,13 +424,14 @@ export const landmarkBreakthroughs: Breakthrough[] = [
     title: 'Fields 2026: Deng (PDE) & Pardon (symplectic)',
     field: 'PDE & geometry',
     glance:
-      'Kinetic PDE derivations and symplectic / topological machinery recognized at ICM 2026.',
+      'Particle-to-fluid derivations and curve-counting geometry recognized at ICM 2026.',
+    discoveredBy: { kind: 'human', label: 'Deng & Pardon' },
     plain: {
-      what: 'Yu Deng was awarded a Fields Medal for rigorous derivations connecting microscopic particle systems to kinetic equations (Boltzmann, wave kinetics) and probabilistic NLS dynamics. John Pardon was recognized for symplectic geometry (virtual cycles, Fukaya categories, holomorphic curves) and topology (3-manifold group actions, knot theory).',
+      what: 'Yu Deng earned a Fields Medal for rigorous bridges from microscopic particle systems to continuum kinetic equations and related wave models. John Pardon was recognized for rebuilding foundations that count curves in symplectic geometry, plus topology results on 3-manifolds and knots.',
       whyItMatters:
-        'These are multi-year structural programs: Deng bridges atoms-to-PDEs; Pardon rebuilds foundations for counting curves and symplectic invariants.',
+        'These are multi-year structural programs: Deng bridges atoms to continuum equations; Pardon rebuilds tools for counting curves and geometric invariants.',
       result:
-        'Fields Medals (Jul 2026) for Deng’s PDE/kinetic work and Pardon’s symplectic geometry & topology.',
+        'Fields Medals (Jul 2026) for Deng’s kinetic PDE work and Pardon’s symplectic geometry and topology.',
     },
     deep: {
       statement:
@@ -395,15 +454,23 @@ export const landmarkBreakthroughs: Breakthrough[] = [
     applications: [
       {
         id: 'fluids-kinetic',
-        title: 'Fluids & kinetic theory',
+        title: 'Particles to fluid equations',
         domain: 'analysis',
-        blurb: 'Justifies continuum equations from particle models.',
+        blurb: 'Justifies continuum kinetic equations from microscopic particle models.',
+        detail:
+          'Kinetic theory asks when a cloud of colliding particles is well described by continuum equations like Boltzmann. Deng’s program supplies rigorous bridges from hard-sphere dynamics and related wave models to those equations. Modelers in math and physics get a clearer warrant for when the continuum approximation is more than a convenient fiction.',
+        commercial:
+          'Kinetic and rarefied-gas solvers are commercial software in aerospace (re-entry, satellites), semiconductor vacuum processing, and plasma equipment. Rigorous derivations tell those vendors when their continuum models are trustworthy — and when they are not.',
       },
       {
         id: 'symplectic-invariants',
-        title: 'Symplectic invariants',
+        title: 'Counting curves in geometry',
         domain: 'geometry',
-        blurb: 'Tools for counting curves and building topological field-theory data.',
+        blurb: 'Rebuilds tools that count curves and feed topological invariants.',
+        detail:
+          'Symplectic geometers count holomorphic curves to build invariants used across geometry and topology. Pardon’s foundational work (virtual cycles, Fukaya categories, and related topology) makes those counts more reliable and usable. The application is to research infrastructure: better foundations for the invariants others compute with.',
+        commercial:
+          'No direct product — this is foundations for the geometry that theoretical physics and topology tooling build on. Any commercial payoff routes through those fields first.',
       },
     ],
     demoId: 'fields-pde',

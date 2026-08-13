@@ -64,8 +64,9 @@ a:hover {
   top: 0;
   z-index: 20;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: var(--space-3);
+  gap: var(--space-2) var(--space-3);
   min-height: var(--header-h);
   padding: var(--space-2) var(--space-4);
   background: color-mix(in srgb, var(--bg) 88%, transparent);
@@ -269,6 +270,39 @@ a:hover {
   margin-bottom: var(--space-2);
 }
 
+.discoverer {
+  display: block;
+  font-weight: 600;
+  font-size: 0.78rem;
+  letter-spacing: 0.02em;
+  margin-top: var(--space-1);
+  line-height: 1.3;
+}
+
+.discoverer--claude {
+  color: var(--discoverer-claude);
+}
+
+.discoverer--openai {
+  color: var(--discoverer-openai);
+}
+
+.discoverer--human {
+  color: var(--discoverer-human);
+}
+
+.discoverer-detail {
+  margin: 0 0 var(--space-4);
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.discoverer-detail .discoverer {
+  display: inline;
+  margin-top: 0;
+  font-size: inherit;
+}
+
 .h2 {
   font-family: var(--font-display);
   font-weight: 700;
@@ -283,6 +317,68 @@ a:hover {
 
 .prose p:last-child {
   margin-bottom: 0;
+}
+
+.apps-section {
+  margin-top: var(--space-2);
+}
+
+.app-block {
+  margin: 0 0 var(--space-5);
+  padding: 0 0 var(--space-4);
+  border-bottom: 1px solid color-mix(in srgb, var(--muted) 28%, transparent);
+}
+
+.app-block:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.app-block-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.02rem;
+  letter-spacing: -0.02em;
+  margin: 0 0 var(--space-1);
+  color: var(--fg);
+}
+
+.app-block .field-tag {
+  margin-bottom: var(--space-2);
+}
+
+.app-block-detail {
+  margin: 0 0 var(--space-3);
+  color: var(--fg);
+  max-width: 42rem;
+}
+
+.app-block-commercial {
+  margin: 0 0 var(--space-3);
+  color: var(--muted);
+  max-width: 42rem;
+}
+
+.app-commercial-label {
+  display: block;
+  color: var(--accent-2);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 2px;
+}
+
+.app-block-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-size: 0.875rem;
+  color: var(--muted);
+}
+
+.app-block-link:hover {
+  color: var(--accent);
 }
 
 .deep-panel {
@@ -330,6 +426,22 @@ a:hover {
   min-height: var(--tap);
   padding: var(--space-3) 0;
   border-bottom: 1px solid var(--line);
+}
+
+.toggle-row--header {
+  justify-content: flex-end;
+  gap: var(--space-2);
+  min-height: var(--tap);
+  padding: 0;
+  border-bottom: none;
+  flex-shrink: 0;
+}
+
+.toggle-row--header .toggle-meta strong {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--muted);
+  white-space: nowrap;
 }
 
 .toggle-meta {
@@ -458,8 +570,27 @@ a:hover {
   color: var(--fg);
 }
 
+.sources-summary {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--tap);
+  margin-top: var(--space-5);
+  color: var(--muted);
+  font-size: 0.85rem;
+  cursor: pointer;
+  list-style: none;
+}
+
+.sources-summary::-webkit-details-marker {
+  display: none;
+}
+
+.sources-summary:hover {
+  color: var(--fg);
+}
+
 .sources {
-  margin: var(--space-5) 0 0;
+  margin: var(--space-2) 0 0;
   padding: 0;
   list-style: none;
 }

@@ -12,11 +12,18 @@ export type AppDomain =
 
 export type Series = 'landmark' | 'astra'
 
+export type DiscovererKind = 'claude' | 'openai' | 'human'
+
 export type Application = {
   id: string
   title: string
   domain: AppDomain
+  /** One glance line for the /applications index. */
   blurb: string
+  /** 2–4 plain sentences: where it shows up and how this result connects. */
+  detail: string
+  /** 1–2 honest sentences: who could pay for or productize this — or the nearest commercial edge. */
+  commercial: string
 }
 
 export type Breakthrough = {
@@ -28,6 +35,7 @@ export type Breakthrough = {
   series: Series
   when: string
   glance: string
+  discoveredBy: { kind: DiscovererKind; label: string }
   plain: {
     what: string
     whyItMatters: string
@@ -40,6 +48,31 @@ export type Breakthrough = {
   }
   applications: Application[]
   demoId: string
+  sources: { label: string; href: string }[]
+}
+
+export type OpenProblemPrize = 'millennium'
+
+export type OpenProblem = {
+  id: string
+  /** Display rank by importance (1 = highest). */
+  importance: number
+  title: string
+  field: string
+  /** Clay Millennium Prize chip when set. */
+  prize?: OpenProblemPrize | null
+  glance: string
+  plain: {
+    what: string
+    whyItMatters: string
+    status: string
+  }
+  deep: {
+    statement: string
+    notes: string[]
+    jargon: { term: string; def: string }[]
+  }
+  relatedBreakthroughId?: string
   sources: { label: string; href: string }[]
 }
 

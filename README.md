@@ -1,6 +1,6 @@
 # Deez-MATH
 
-Explore major **2026 math breakthroughs** — OpenAI Astra’s ten, plus landmarks (Jacobian ≥3, unit-distance, Fields highlights, Cohen–Lenstra, Erdős #728). Plain language, **Go deeper**, and interactive demos, ranked by importance.
+Explore major **2026 math breakthroughs** — OpenAI Astra’s ten, plus landmarks (Jacobian ≥3, unit-distance, Fields highlights, Cohen–Lenstra, Erdős #728) — and a separate **Open problems** catalog (Clay Millennium six still open, plus Goldbach, twin primes, Collatz, Jacobian dim 2). Plain language, **Go deeper**, and interactive demos on advances, ranked by importance.
 
 ## Local
 
