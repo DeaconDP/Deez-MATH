@@ -1,7 +1,7 @@
 # Deez MATH
 
 <p align="center">
-  <img src="https://cdn.jsdelivr.net/gh/DeaconDP/Deez-MATH@PLACEHOLDER/docs/screenshots/hero.png" alt="Deez MATH" width="720" />
+  <img src="https://cdn.jsdelivr.net/gh/DeaconDP/Deez-MATH@ab2c870dd8c47dbf3d7d9e8a3e912e732f45fde9/docs/screenshots/hero.png" alt="Deez MATH" width="720" />
 </p>
 
 Explore major 2026 math breakthroughs and open problems — plain language, Go deeper, and interactive demos.
