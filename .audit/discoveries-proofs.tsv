@@ -7,3 +7,4 @@ ts	phase	decision	why	evidence	result
 2026-09-10T08:10:00Z	demos	FltFormalization RiemannZeros Erdos1196 demos registered	each breakthrough needs a demoId in the registry	src/demos/* npm run check:catalog	catalog ok
 2026-09-10T08:15:00Z	verify	npm run build green after catalog update	prove on real build artifact	npm run build	VERIFIED build
 2026-09-10T08:45:00Z	verify	sticky-port 5204 shows 20 advances FLT detail Lean badge and RH related link	prove-it-works on real UI screenshots	/opt/cursor/artifacts/home_catalog.png breakthroughs_list.png flt_detail.png riemann_open.png	VERIFIED UI
+2026-09-10T08:50:00Z	pr	branch pushed; PR create 403 from gh and origin auth missing	integration token can push but not open PRs	https://github.com/DeaconDP/Deez-MATH/compare/main...cursor/discoveries-proofs-catalog-2d87	BLOCKED open PR needs human or ManagePullRequest
