@@ -201,6 +201,10 @@ export const astraBreakthroughs: Breakthrough[] = [
       },
     ],
     demoId: 'non-sofic',
+    lean: {
+      label: 'openai/ten-proofs · NonSoficGroup',
+      href: 'https://github.com/openai/ten-proofs/blob/main/NonSoficGroup.lean',
+    },
     sources: [
       {
         label: 'OpenAI announcement',
@@ -209,6 +213,10 @@ export const astraBreakthroughs: Breakthrough[] = [
       {
         label: 'Manuscript PDF',
         href: 'https://cdn.openai.com/pdf/ten-proofs-oai.pdf',
+      },
+      {
+        label: 'Lean · NonSoficGroup.lean',
+        href: 'https://github.com/openai/ten-proofs/blob/main/NonSoficGroup.lean',
       },
     ],
   },

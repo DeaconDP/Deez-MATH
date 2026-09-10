@@ -179,7 +179,8 @@ export const landmarkBreakthroughs: Breakthrough[] = [
       statement:
         'Unconditionally, N₀ˢ(T,2T) ≥ (2/3 − o(1)) N(T,2T) and Nᵈ(T,2T) ≥ (5/6 − o(1)) N(T,2T); with the Montgomery–Taylor window the constants improve to ≈0.6725 and ≈0.8362. The argument replaces RH-dependent positivity by a rank–trace / inertia bound on a compression of Weil’s Hermitian form.',
       notes: [
-        'AI-authored argument verified by Alpöge and Furman; Lean 4 formalization reported with the announcement. A conceptually shorter proof appears as arXiv:2609.02882 (2 Sep 2026).',
+        'AI-authored argument verified by Alpöge and Furman; Lean 4 formalization in anthropics/formal-math (zeta23/). github.com/anthropics/zeta-23-lean redirects there.',
+        'A conceptually shorter proof appears as arXiv:2609.02882 (2 Sep 2026).',
         'Previous unconditional records were far weaker (~41.7% on the line in classical Levinson–Conrey-style counts; ~66% distinct in prior work). This is progress toward RH, not a proof of RH.',
         'Related open problem entry: Riemann hypothesis remains a Clay Millennium Problem.',
       ],
@@ -218,8 +219,9 @@ export const landmarkBreakthroughs: Breakthrough[] = [
     ],
     demoId: 'riemann-zeros',
     lean: {
-      label: 'Lean formalization (announced with paper)',
-      href: 'https://arxiv.org/abs/2608.13637',
+      // github.com/anthropics/zeta-23-lean redirects here; certificate lives under zeta23/
+      label: 'anthropics/formal-math · zeta23',
+      href: 'https://github.com/anthropics/formal-math/tree/main/zeta23',
     },
     sources: [
       {
@@ -229,6 +231,10 @@ export const landmarkBreakthroughs: Breakthrough[] = [
       {
         label: 'Shorter proof arXiv:2609.02882',
         href: 'https://arxiv.org/abs/2609.02882',
+      },
+      {
+        label: 'Lean certificate (zeta23)',
+        href: 'https://github.com/anthropics/formal-math/tree/main/zeta23',
       },
     ],
   },
