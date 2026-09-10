@@ -6,3 +6,4 @@ ts	phase	decision	why	evidence	result
 2026-09-10T08:05:00Z	types	optional lean badge on Breakthrough plus list/detail UI	roadmap wanted external Lean verify links only	src/data/types.ts BreakthroughDetail BreakthroughList	lean chips for 4 entries
 2026-09-10T08:10:00Z	demos	FltFormalization RiemannZeros Erdos1196 demos registered	each breakthrough needs a demoId in the registry	src/demos/* npm run check:catalog	catalog ok
 2026-09-10T08:15:00Z	verify	npm run build green after catalog update	prove on real build artifact	npm run build	VERIFIED build
+2026-09-10T08:45:00Z	verify	sticky-port 5204 shows 20 advances FLT detail Lean badge and RH related link	prove-it-works on real UI screenshots	/opt/cursor/artifacts/home_catalog.png breakthroughs_list.png flt_detail.png riemann_open.png	VERIFIED UI
