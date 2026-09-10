@@ -2,10 +2,11 @@
 
 ## Active
 
-- (none)
+- [ ] Activate bi-weekly Cursor Automation — paste prompt from `docs/biweekly-update-automation.md` at [cursor.com/automations/new](https://cursor.com/automations/new) (cron `0 9 1,15 * *`, repo Deez-MATH, PR + Memories on)
 
 ## Done
 
+- [x] Bi-weekly update automation brief — schedule, paste-ready prompt, PR rules (`docs/biweekly-update-automation.md`)
 - [x] Sep 2026 catalog catch-up — FLT Lean formalization, >2/3 zeta zeros, Erdős #1196 + Lean badges
 - [x] Commercial angle per application — honest 1–2 line commercial framing on every breakthrough application (detail page)
 - [x] Flesh out breakthrough applications (detail copy + prose on detail page)
