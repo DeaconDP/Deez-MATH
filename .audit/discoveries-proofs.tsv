@@ -1,0 +1,8 @@
+ts	phase	decision	why	evidence	result
+2026-09-10T07:30:00Z	frame	done when FLT Riemann-zeros and Erdős-1196 are in the catalog with demos RH status updated and build plus sticky-port checks green	catalog lagged Sep 2026 discoveries and Lean proofs	web search Anthropic FLT + arXiv 2608.13637 + erdosproblems.com/1196	framed
+2026-09-10T07:31:00Z	frame	architect skipped shape is existing Breakthrough registry plus optional lean badge	no novel interaction to arena	playbooks/feature.md architect skip rule	architect skipped
+2026-09-10T07:32:00Z	harness	baseline catalog 17 breakthroughs 10 open problems before edits	need old vs new for prove-it-works	scripts/check-catalog.mjs will fail until content lands	baseline 17/10
+2026-09-10T08:00:00Z	content	added FLT Riemann-zeros Erdős-1196 landmarks with Lean links and RH open-problem update	Sep 2026 discoveries were missing from the catalog	src/data/landmarks.ts src/data/openProblems.ts	catalog 20 breakthroughs
+2026-09-10T08:05:00Z	types	optional lean badge on Breakthrough plus list/detail UI	roadmap wanted external Lean verify links only	src/data/types.ts BreakthroughDetail BreakthroughList	lean chips for 4 entries
+2026-09-10T08:10:00Z	demos	FltFormalization RiemannZeros Erdos1196 demos registered	each breakthrough needs a demoId in the registry	src/demos/* npm run check:catalog	catalog ok
+2026-09-10T08:15:00Z	verify	npm run build green after catalog update	prove on real build artifact	npm run build	VERIFIED build

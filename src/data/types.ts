@@ -26,6 +26,12 @@ export type Application = {
   commercial: string
 }
 
+/** Optional external Lean / formal certificate (verify outside the app). */
+export type LeanCertificate = {
+  label: string
+  href: string
+}
+
 export type Breakthrough = {
   id: string
   /** Display rank by importance (1 = highest). */
@@ -48,6 +54,8 @@ export type Breakthrough = {
   }
   applications: Application[]
   demoId: string
+  /** Machine-checkable Lean artifact when one is public. */
+  lean?: LeanCertificate
   sources: { label: string; href: string }[]
 }
 

@@ -2,7 +2,14 @@ import { astraBreakthroughs } from './astraTen'
 import { landmarkBreakthroughs } from './landmarks'
 import type { Breakthrough } from './types'
 
-export type { AppDomain, Application, Breakthrough, DiscovererKind, Series } from './types'
+export type {
+  AppDomain,
+  Application,
+  Breakthrough,
+  DiscovererKind,
+  LeanCertificate,
+  Series,
+} from './types'
 export { DOMAIN_LABELS, SERIES_LABELS } from './types'
 
 /** All breakthroughs, sorted by importance (1 = highest). */

@@ -6,6 +6,7 @@
 
 ## Done
 
+- [x] Sep 2026 catalog catch-up — FLT Lean formalization, >2/3 zeta zeros, Erdős #1196 + Lean badges
 - [x] Commercial angle per application — honest 1–2 line commercial framing on every breakthrough application (detail page)
 - [x] Flesh out breakthrough applications (detail copy + prose on detail page)
 - [x] Scaffold Vite/React/TS PWA on port 5204

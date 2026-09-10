@@ -303,6 +303,35 @@ a:hover {
   font-size: inherit;
 }
 
+.lean-chip {
+  display: inline-block;
+  margin-left: var(--space-2);
+  padding: 0.1em 0.45em;
+  border: 1px solid color-mix(in srgb, var(--accent) 45%, var(--line));
+  border-radius: 3px;
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--accent);
+  vertical-align: middle;
+}
+
+.lean-badge {
+  margin: calc(var(--space-3) * -1) 0 var(--space-4);
+  font-size: 0.85rem;
+}
+
+.lean-link {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+}
+
+.lean-note {
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
 .h2 {
   font-family: var(--font-display);
   font-weight: 700;

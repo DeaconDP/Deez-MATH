@@ -16,6 +16,9 @@ import { AndreOortDemo } from './AndreOortDemo'
 import { CohenLenstraDemo } from './CohenLenstraDemo'
 import { Erdos728Demo } from './Erdos728Demo'
 import { FieldsPdeDemo } from './FieldsPdeDemo'
+import { FltFormalizationDemo } from './FltFormalizationDemo'
+import { RiemannZerosDemo } from './RiemannZerosDemo'
+import { Erdos1196Demo } from './Erdos1196Demo'
 
 const MAP: Record<string, () => ReactNode> = {
   'sphere-packing': () => <SpherePackingDemo />,
@@ -35,6 +38,9 @@ const MAP: Record<string, () => ReactNode> = {
   'cohen-lenstra': () => <CohenLenstraDemo />,
   'erdos-728': () => <Erdos728Demo />,
   'fields-pde': () => <FieldsPdeDemo />,
+  'flt-formalization': () => <FltFormalizationDemo />,
+  'riemann-zeros': () => <RiemannZerosDemo />,
+  'erdos-1196': () => <Erdos1196Demo />,
 }
 
 export function DemoFor({ id }: { id: string }) {
