@@ -34,6 +34,14 @@ export function BreakthroughDetail() {
           {b.discoveredBy.label}
         </span>
       </p>
+      {b.lean ? (
+        <p className="lean-badge">
+          <a className="lean-link" href={b.lean.href} rel="noopener noreferrer">
+            Lean certificate — {b.lean.label}
+          </a>
+          <span className="lean-note"> verify outside this app</span>
+        </p>
+      ) : null}
 
       <section className="prose" aria-label="Plain explanation">
         <h2 className="h2">In plain words</h2>

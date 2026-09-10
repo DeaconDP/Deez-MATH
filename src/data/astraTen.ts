@@ -3,7 +3,7 @@ import type { Breakthrough } from './types'
 export const astraBreakthroughs: Breakthrough[] = [
   {
     id: 'sphere-packing',
-    importance: 8,
+    importance: 10,
     series: 'astra' as const,
     discoveredBy: { kind: 'openai' as const, label: 'OpenAI Astra' },
     when: 'Aug 2026',
@@ -72,7 +72,7 @@ export const astraBreakthroughs: Breakthrough[] = [
   },
   {
     id: 'codes',
-    importance: 9,
+    importance: 11,
     series: 'astra' as const,
     discoveredBy: { kind: 'openai' as const, label: 'OpenAI Astra' },
     when: 'Aug 2026',
@@ -141,7 +141,7 @@ export const astraBreakthroughs: Breakthrough[] = [
   },
   {
     id: 'non-sofic',
-    importance: 2,
+    importance: 4,
     series: 'astra' as const,
     discoveredBy: { kind: 'openai' as const, label: 'OpenAI Astra' },
     when: 'Aug 2026',
@@ -201,6 +201,10 @@ export const astraBreakthroughs: Breakthrough[] = [
       },
     ],
     demoId: 'non-sofic',
+    lean: {
+      label: 'openai/ten-proofs · NonSoficGroup',
+      href: 'https://github.com/openai/ten-proofs/blob/main/NonSoficGroup.lean',
+    },
     sources: [
       {
         label: 'OpenAI announcement',
@@ -210,11 +214,15 @@ export const astraBreakthroughs: Breakthrough[] = [
         label: 'Manuscript PDF',
         href: 'https://cdn.openai.com/pdf/ten-proofs-oai.pdf',
       },
+      {
+        label: 'Lean · NonSoficGroup.lean',
+        href: 'https://github.com/openai/ten-proofs/blob/main/NonSoficGroup.lean',
+      },
     ],
   },
   {
     id: 'connes',
-    importance: 3,
+    importance: 5,
     series: 'astra' as const,
     discoveredBy: { kind: 'openai' as const, label: 'OpenAI Astra' },
     when: 'Aug 2026',
@@ -282,7 +290,7 @@ export const astraBreakthroughs: Breakthrough[] = [
   },
   {
     id: 'permanent',
-    importance: 10,
+    importance: 12,
     series: 'astra' as const,
     discoveredBy: { kind: 'openai' as const, label: 'OpenAI Astra' },
     when: 'Aug 2026',
@@ -350,7 +358,7 @@ export const astraBreakthroughs: Breakthrough[] = [
   },
   {
     id: 'quantum-repetition',
-    importance: 11,
+    importance: 13,
     series: 'astra' as const,
     discoveredBy: { kind: 'openai' as const, label: 'OpenAI Astra' },
     when: 'Aug 2026',
@@ -418,7 +426,7 @@ export const astraBreakthroughs: Breakthrough[] = [
   },
   {
     id: 'cvp',
-    importance: 12,
+    importance: 14,
     series: 'astra' as const,
     discoveredBy: { kind: 'openai' as const, label: 'OpenAI Astra' },
     when: 'Aug 2026',
@@ -486,7 +494,7 @@ export const astraBreakthroughs: Breakthrough[] = [
   },
   {
     id: 'ehrhart',
-    importance: 13,
+    importance: 15,
     series: 'astra' as const,
     discoveredBy: { kind: 'openai' as const, label: 'OpenAI Astra' },
     when: 'Aug 2026',
@@ -557,7 +565,7 @@ export const astraBreakthroughs: Breakthrough[] = [
   },
   {
     id: 'ramsey',
-    importance: 14,
+    importance: 16,
     series: 'astra' as const,
     discoveredBy: { kind: 'openai' as const, label: 'OpenAI Astra' },
     when: 'Aug 2026',
@@ -623,7 +631,7 @@ export const astraBreakthroughs: Breakthrough[] = [
   },
   {
     id: 'extremal',
-    importance: 15,
+    importance: 17,
     series: 'astra' as const,
     discoveredBy: { kind: 'openai' as const, label: 'OpenAI Astra' },
     when: 'Aug 2026',

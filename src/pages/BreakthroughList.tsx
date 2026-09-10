@@ -16,6 +16,7 @@ export function BreakthroughList() {
                 <span className={`discoverer discoverer--${b.discoveredBy.kind}`}>
                   {b.discoveredBy.label}
                 </span>
+                {b.lean ? <span className="lean-chip">Lean</span> : null}
                 <span className="row-glance">{b.glance}</span>
               </span>
             </Link>

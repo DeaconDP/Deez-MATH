@@ -16,7 +16,7 @@ export const openProblems: OpenProblem[] = [
       whyItMatters:
         'A proof would lock in sharp error terms for counting primes and reshape large parts of number theory. Many theorems today assume the guess and would become unconditional.',
       status:
-        'Still open. One of the six remaining Clay Millennium Prize Problems ($1M). Huge ranges are checked and some partial regions are known; no full proof is accepted.',
+        'Still open as a full statement — Clay Millennium Prize ($1M). Aug 2026 breakthrough (see related advance): unconditionally more than two-thirds of nontrivial zeros are simple and on the critical line, with a Lean-checked argument. That is major partial progress, not a proof of RH.',
     },
     deep: {
       statement:
@@ -25,6 +25,7 @@ export const openProblems: OpenProblem[] = [
         'Trivial zeros at negative even integers are well understood; the conjecture concerns zeros in the critical strip 0 < Re(s) < 1.',
         'Equivalent formulations exist via the Liouville function, Möbius sums, and random-matrix statistics of zeros.',
         'Clay Millennium Prize Problem; see Clay Math Institute statement.',
+        'Related 2026 advance: >2/3 of zeros simple and on the line (Alpöge–Furman / Claude; arXiv:2608.13637).',
       ],
       jargon: [
         {
@@ -37,10 +38,15 @@ export const openProblems: OpenProblem[] = [
         },
       ],
     },
+    relatedBreakthroughId: 'riemann-zeros',
     sources: [
       {
         label: 'Clay Math — Riemann hypothesis',
         href: 'https://www.claymath.org/millennium/riemann-hypothesis/',
+      },
+      {
+        label: 'arXiv:2608.13637 — >2/3 on the line',
+        href: 'https://arxiv.org/abs/2608.13637',
       },
       {
         label: 'Wikipedia — Riemann hypothesis',
