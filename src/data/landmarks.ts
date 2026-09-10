@@ -219,7 +219,6 @@ export const landmarkBreakthroughs: Breakthrough[] = [
     ],
     demoId: 'riemann-zeros',
     lean: {
-      // github.com/anthropics/zeta-23-lean redirects here; certificate lives under zeta23/
       label: 'anthropics/formal-math · zeta23',
       href: 'https://github.com/anthropics/formal-math/tree/main/zeta23',
     },
