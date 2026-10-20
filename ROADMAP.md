@@ -6,6 +6,7 @@
 - [x] Incorporate other major 2026 landmarks (Jacobian, unit-distance, Fields, Cohen–Lenstra, #728)
 - [x] Open problems catalog — Clay Millennium (6) + Goldbach, twin primes, Collatz, Jacobian dim 2
 - [x] Optional Lean certificate status badges (external verify link only)
+- [x] Oct 2026 headline catch-up — 16 named results in `src/data/entries/` (not the full 372-family dump)
 - [ ] Bi-weekly Cursor Automation for catalog + safe dep updates (`docs/biweekly-update-automation.md`)
 - [ ] Optional Tauri shell for desktop packaging
 
@@ -19,3 +20,4 @@
 - 2026-08-09: No live prize-status / claim tracking beyond static copy. `src/data/openProblems.ts`
 - 2026-09-10: Catalog catch-up — FLT Lean formalization, >2/3 zeta zeros, Erdős #1196. `src/data/landmarks.ts`
 - 2026-09-10: Exact 14-day spacing skipped — cron uses 1st+15th; webhook if strict fortnight needed. `docs/biweekly-update-automation.md`
+- 2026-10-20: Full 372-family OpenAI math catalog left out. The app stays a ranked headline list. `src/data/entries/index.ts`

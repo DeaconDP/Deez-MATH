@@ -6,6 +6,8 @@
 
 ## Done
 
+- [x] Oct 2026 headline catch-up — 16 entries (OpenAI catalog headlines, AlphaProof Nexus, FormalFlow LIDT, IneqAgent), each in `src/data/entries/`
+
 - [x] Bi-weekly update automation brief — schedule, paste-ready prompt, PR rules (`docs/biweekly-update-automation.md`)
 - [x] Sep 2026 catalog catch-up — FLT Lean formalization, >2/3 zeta zeros, Erdős #1196 + Lean badges
 - [x] Commercial angle per application — honest 1–2 line commercial framing on every breakthrough application (detail page)

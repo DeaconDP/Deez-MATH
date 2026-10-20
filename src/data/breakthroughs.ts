@@ -1,4 +1,5 @@
 import { astraBreakthroughs } from './astraTen'
+import { octoberBreakthroughs } from './entries'
 import { landmarkBreakthroughs } from './landmarks'
 import type { Breakthrough } from './types'
 
@@ -16,6 +17,7 @@ export { DOMAIN_LABELS, SERIES_LABELS } from './types'
 export const breakthroughs: Breakthrough[] = [
   ...landmarkBreakthroughs,
   ...astraBreakthroughs,
+  ...octoberBreakthroughs,
 ].sort((a, b) => a.importance - b.importance)
 
 export function getBreakthrough(id: string): Breakthrough | undefined {

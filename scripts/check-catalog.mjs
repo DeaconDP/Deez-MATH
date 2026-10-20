@@ -38,11 +38,25 @@ const landmarks = extractEntries(
   'landmarkBreakthroughs',
 )
 const astra = extractEntries(readFileSync(join(dataDir, 'astraTen.ts'), 'utf8'), 'astraBreakthroughs')
+const entriesDir = join(dataDir, 'entries')
+const splitEntries = readdirSync(entriesDir)
+  .filter((f) => f.endsWith('.ts') && f !== 'index.ts')
+  .map((f) => {
+    const src = readFileSync(join(entriesDir, f), 'utf8')
+    const id = /id:\s*'([^']+)'/.exec(src)?.[1]
+    const importance = Number(/importance:\s*(\d+)/.exec(src)?.[1])
+    const demoId = /demoId:\s*'([^']+)'/.exec(src)?.[1]
+    const lean = /lean:\s*\{/.test(src)
+    if (!id || !Number.isFinite(importance)) {
+      throw new Error(`unreadable entry file: ${f}`)
+    }
+    return { id, importance, demoId, lean }
+  })
 const openProblems = extractEntries(
   readFileSync(join(dataDir, 'openProblems.ts'), 'utf8'),
   'openProblems',
 )
-const all = [...landmarks, ...astra]
+const all = [...landmarks, ...astra, ...splitEntries]
 
 const errors = []
 const ids = new Set()

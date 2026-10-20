@@ -19,6 +19,22 @@ import { FieldsPdeDemo } from './FieldsPdeDemo'
 import { FltFormalizationDemo } from './FltFormalizationDemo'
 import { RiemannZerosDemo } from './RiemannZerosDemo'
 import { Erdos1196Demo } from './Erdos1196Demo'
+import { QuasiRiemannDemo } from './QuasiRiemannDemo'
+import { BsdLowCorankDemo } from './BsdLowCorankDemo'
+import { HilbertTenthDemo } from './HilbertTenthDemo'
+import { UniqueGamesDemo } from './UniqueGamesDemo'
+import { LogspaceDerandomDemo } from './LogspaceDerandomDemo'
+import { MatrixMultDemo } from './MatrixMultDemo'
+import { CatalanConstantDemo } from './CatalanConstantDemo'
+import { GoldfeldDemo } from './GoldfeldDemo'
+import { HilbertSixteenthDemo } from './HilbertSixteenthDemo'
+import { PlaneFiveColorsDemo } from './PlaneFiveColorsDemo'
+import { ErdosReciprocalDemo } from './ErdosReciprocalDemo'
+import { FalconerDemo } from './FalconerDemo'
+import { MahlerDemo } from './MahlerDemo'
+import { AlphaproofNexusDemo } from './AlphaproofNexusDemo'
+import { MipStarLidtDemo } from './MipStarLidtDemo'
+import { IneqDittertDemo } from './IneqDittertDemo'
 
 const MAP: Record<string, () => ReactNode> = {
   'sphere-packing': () => <SpherePackingDemo />,
@@ -41,6 +57,22 @@ const MAP: Record<string, () => ReactNode> = {
   'flt-formalization': () => <FltFormalizationDemo />,
   'riemann-zeros': () => <RiemannZerosDemo />,
   'erdos-1196': () => <Erdos1196Demo />,
+  'quasi-riemann': () => <QuasiRiemannDemo />,
+  'bsd-low-corank': () => <BsdLowCorankDemo />,
+  'hilbert-tenth-q': () => <HilbertTenthDemo />,
+  'unique-games': () => <UniqueGamesDemo />,
+  'logspace-derandom': () => <LogspaceDerandomDemo />,
+  'matrix-mult': () => <MatrixMultDemo />,
+  'catalan-constant': () => <CatalanConstantDemo />,
+  'goldfeld': () => <GoldfeldDemo />,
+  'hilbert-sixteenth': () => <HilbertSixteenthDemo />,
+  'plane-five-colors': () => <PlaneFiveColorsDemo />,
+  'erdos-reciprocal': () => <ErdosReciprocalDemo />,
+  'falconer': () => <FalconerDemo />,
+  mahler: () => <MahlerDemo />,
+  'alphaproof-nexus': () => <AlphaproofNexusDemo />,
+  'mip-star-lidt': () => <MipStarLidtDemo />,
+  'ineq-dittert': () => <IneqDittertDemo />,
 }
 
 export function DemoFor({ id }: { id: string }) {

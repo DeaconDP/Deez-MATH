@@ -11,6 +11,7 @@
   --discoverer-claude: #ff8a2b;
   --discoverer-openai: #ffffff;
   --discoverer-human: #f0c95a;
+  --discoverer-deepmind: #7eb6ff;
   --danger: #ff6b6b;
   --ok: #6dffb0;
   --glow: color-mix(in srgb, var(--accent) 28%, transparent);

@@ -12,7 +12,7 @@ export type AppDomain =
 
 export type Series = 'landmark' | 'astra'
 
-export type DiscovererKind = 'claude' | 'openai' | 'human'
+export type DiscovererKind = 'claude' | 'openai' | 'human' | 'deepmind'
 
 export type Application = {
   id: string
