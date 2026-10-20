@@ -25,9 +25,9 @@ export function Home() {
         </Link>
       </div>
       <p className="disclaimer">
-        Mix of human Fields/number-theory work and AI-assisted claims (OpenAI Astra, Fable, GPT +
-        Lean). Deez-MATH does not verify proofs. Peer review may still be pending — demos are
-        intuition tools, not certificates.
+        Mix of human Fields and number-theory work and AI-assisted claims (OpenAI Astra, Fable, GPT
+        plus Lean, and the 6 Oct 2026 OpenAI catalog). Deez-MATH does not verify proofs. Peer
+        review may still be pending. Demos are intuition tools, not certificates.
       </p>
     </>
   )

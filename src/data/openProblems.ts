@@ -16,7 +16,7 @@ export const openProblems: OpenProblem[] = [
       whyItMatters:
         'A proof would lock in sharp error terms for counting primes and reshape large parts of number theory. Many theorems today assume the guess and would become unconditional.',
       status:
-        'Still open as a full statement — Clay Millennium Prize ($1M). Aug 2026 breakthrough (see related advance): unconditionally more than two-thirds of nontrivial zeros are simple and on the critical line, with a Lean-checked argument. That is major partial progress, not a proof of RH.',
+        'Still open as a full statement — Clay Millennium Prize ($1M). Aug 2026 breakthrough (see related advance): unconditionally more than two-thirds of nontrivial zeros are simple and on the critical line, with a Lean-checked argument. An Oct 2026 catalog claim (quasi-Riemann) says zeta is zero-free past real part 7/8. That claim is a different theorem, still under examination, and it is not a proof of RH.',
     },
     deep: {
       statement:
@@ -26,6 +26,7 @@ export const openProblems: OpenProblem[] = [
         'Equivalent formulations exist via the Liouville function, Möbius sums, and random-matrix statistics of zeros.',
         'Clay Millennium Prize Problem; see Clay Math Institute statement.',
         'Related 2026 advance: >2/3 of zeros simple and on the line (Alpöge–Furman / Claude; arXiv:2608.13637).',
+        'Oct 2026 OpenAI catalog claim: zero-free for Dirichlet L-functions in Re(s) > 7/8. Not a proof of RH. See breakthrough quasi-riemann.',
       ],
       jargon: [
         {
@@ -198,7 +199,7 @@ export const openProblems: OpenProblem[] = [
       whyItMatters:
         'It links algebra (points on curves) to analysis (those formulas). Proved cases already power cryptography intuition and arithmetic geometry; the full conjecture remains a North Star.',
       status:
-        'Still open in general. Many low-rank cases are settled under extra hypotheses; higher rank is wide open. Clay Millennium Prize Problem.',
+        'Still open in general. Many low-rank cases are settled under extra hypotheses; higher rank is wide open. An Oct 2026 catalog claim covers the full leading-term formula when some p-power Selmer corank is 0 or 1, including finiteness of Sha in that range. That is not the Millennium statement for every curve. Clay Millennium Prize Problem.',
     },
     deep: {
       statement:
@@ -207,6 +208,7 @@ export const openProblems: OpenProblem[] = [
         'Gross–Zagier, Kolyvagin, and later work settle many rank ≤ 1 cases.',
         'The Tate–Shafarevich group’s finiteness is entangled with the full conjecture.',
         'Clay Millennium Prize Problem.',
+        'Oct 2026 OpenAI catalog claim: full BSD leading term for Selmer corank 0 or 1. See breakthrough bsd-low-corank. The general conjecture stays open.',
       ],
       jargon: [
         {
@@ -219,6 +221,7 @@ export const openProblems: OpenProblem[] = [
         },
       ],
     },
+    relatedBreakthroughId: 'bsd-low-corank',
     sources: [
       {
         label: 'Clay Math — Birch–Swinnerton-Dyer',

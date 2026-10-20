@@ -56,6 +56,7 @@ export default defineConfig({
     port: 5204,
     strictPort: true,
     host: '127.0.0.1',
+    allowedHosts: ['.tail7316fd.ts.net'],
   },
   preview: {
     port: 5204,

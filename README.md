@@ -11,7 +11,7 @@ Explore major 2026 math breakthroughs and open problems — plain language, Go d
 
 ## Who it’s for
 
-Anyone curious about recent math landmarks (Astra’s ten, Fields highlights, Clay Millennium open set, Goldbach, twin primes, Collatz, and more) without wading through papers first.
+Anyone curious about recent math landmarks (Astra’s ten, Fields highlights, the 6 Oct 2026 OpenAI catalog headlines, Clay Millennium open set, Goldbach, twin primes, Collatz, and more) without wading through papers first.
 
 ## Quick start
 
@@ -25,7 +25,7 @@ Anyone curious about recent math landmarks (Astra’s ten, Fields highlights, Cl
 
 ## Features
 
-- Breakthroughs + landmarks ranked by importance
+- Breakthroughs + landmarks ranked by importance, including 16 Oct 2026 headlines (the full 372-paper OpenAI dump stays out)
 - Separate **Open problems** catalog
 - Plain-language summaries with **Go deeper**
 - Interactive demos for intuition (not formal verification)
