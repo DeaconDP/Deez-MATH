@@ -6,6 +6,7 @@
 
 ## Done
 
+- [x] Late-Oct 2026 catch-up — ETH disproof claim, all-dimension local smoothing (OpenAI 26 Oct release), KLS conjecture (Song–Zhang), each in `src/data/entries/`
 - [x] Oct 2026 headline catch-up — 16 entries (OpenAI catalog headlines, AlphaProof Nexus, FormalFlow LIDT, IneqAgent), each in `src/data/entries/`
 
 - [x] Bi-weekly update automation brief — schedule, paste-ready prompt, PR rules (`docs/biweekly-update-automation.md`)
