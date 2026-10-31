@@ -2,11 +2,14 @@ import { entry as alphaproofNexus } from './alphaproof-nexus'
 import { entry as bsdLowCorank } from './bsd-low-corank'
 import { entry as catalanConstant } from './catalan-constant'
 import { entry as erdosReciprocal } from './erdos-reciprocal'
+import { entry as ethFalse } from './eth-false'
 import { entry as falconer } from './falconer'
 import { entry as goldfeld } from './goldfeld'
 import { entry as hilbertSixteenth } from './hilbert-sixteenth'
 import { entry as hilbertTenthQ } from './hilbert-tenth-q'
 import { entry as ineqDittert } from './ineq-dittert'
+import { entry as kls } from './kls'
+import { entry as localSmoothing } from './local-smoothing'
 import { entry as logspaceDerandom } from './logspace-derandom'
 import { entry as mahler } from './mahler'
 import { entry as matrixMult } from './matrix-mult'
@@ -34,4 +37,8 @@ export const octoberBreakthroughs: Breakthrough[] = [
   alphaproofNexus,
   mipStarLidt,
   ineqDittert,
+  // Late-October additions (26 Oct OpenAI release, KLS).
+  ethFalse,
+  localSmoothing,
+  kls,
 ]

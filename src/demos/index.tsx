@@ -35,6 +35,9 @@ import { MahlerDemo } from './MahlerDemo'
 import { AlphaproofNexusDemo } from './AlphaproofNexusDemo'
 import { MipStarLidtDemo } from './MipStarLidtDemo'
 import { IneqDittertDemo } from './IneqDittertDemo'
+import { EthFalseDemo } from './EthFalseDemo'
+import { LocalSmoothingDemo } from './LocalSmoothingDemo'
+import { KlsDemo } from './KlsDemo'
 
 const MAP: Record<string, () => ReactNode> = {
   'sphere-packing': () => <SpherePackingDemo />,
@@ -73,6 +76,9 @@ const MAP: Record<string, () => ReactNode> = {
   'alphaproof-nexus': () => <AlphaproofNexusDemo />,
   'mip-star-lidt': () => <MipStarLidtDemo />,
   'ineq-dittert': () => <IneqDittertDemo />,
+  'eth-false': () => <EthFalseDemo />,
+  'local-smoothing': () => <LocalSmoothingDemo />,
+  kls: () => <KlsDemo />,
 }
 
 export function DemoFor({ id }: { id: string }) {
