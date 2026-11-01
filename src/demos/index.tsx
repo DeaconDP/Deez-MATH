@@ -1,94 +1,66 @@
-import type { ReactNode } from 'react'
-import { SpherePackingDemo } from './SpherePackingDemo'
-import { CodesDemo } from './CodesDemo'
-import { NonSoficDemo } from './NonSoficDemo'
-import { ConnesDemo } from './ConnesDemo'
-import { PermanentDemo } from './PermanentDemo'
-import { QuantumRepetitionDemo } from './QuantumRepetitionDemo'
-import { CvpDemo } from './CvpDemo'
-import { EhrhartDemo } from './EhrhartDemo'
-import { RamseyDemo } from './RamseyDemo'
-import { ExtremalDemo } from './ExtremalDemo'
-import { JacobianDemo } from './JacobianDemo'
-import { UnitDistanceDemo } from './UnitDistanceDemo'
-import { KakeyaDemo } from './KakeyaDemo'
-import { AndreOortDemo } from './AndreOortDemo'
-import { CohenLenstraDemo } from './CohenLenstraDemo'
-import { Erdos728Demo } from './Erdos728Demo'
-import { FieldsPdeDemo } from './FieldsPdeDemo'
-import { FltFormalizationDemo } from './FltFormalizationDemo'
-import { RiemannZerosDemo } from './RiemannZerosDemo'
-import { Erdos1196Demo } from './Erdos1196Demo'
-import { QuasiRiemannDemo } from './QuasiRiemannDemo'
-import { BsdLowCorankDemo } from './BsdLowCorankDemo'
-import { HilbertTenthDemo } from './HilbertTenthDemo'
-import { UniqueGamesDemo } from './UniqueGamesDemo'
-import { LogspaceDerandomDemo } from './LogspaceDerandomDemo'
-import { MatrixMultDemo } from './MatrixMultDemo'
-import { CatalanConstantDemo } from './CatalanConstantDemo'
-import { GoldfeldDemo } from './GoldfeldDemo'
-import { HilbertSixteenthDemo } from './HilbertSixteenthDemo'
-import { PlaneFiveColorsDemo } from './PlaneFiveColorsDemo'
-import { ErdosReciprocalDemo } from './ErdosReciprocalDemo'
-import { FalconerDemo } from './FalconerDemo'
-import { MahlerDemo } from './MahlerDemo'
-import { AlphaproofNexusDemo } from './AlphaproofNexusDemo'
-import { MipStarLidtDemo } from './MipStarLidtDemo'
-import { IneqDittertDemo } from './IneqDittertDemo'
-import { EthFalseDemo } from './EthFalseDemo'
-import { LocalSmoothingDemo } from './LocalSmoothingDemo'
-import { KlsDemo } from './KlsDemo'
+import { lazy, Suspense, type ComponentType, type LazyExoticComponent } from 'react'
 
-const MAP: Record<string, () => ReactNode> = {
-  'sphere-packing': () => <SpherePackingDemo />,
-  codes: () => <CodesDemo />,
-  'non-sofic': () => <NonSoficDemo />,
-  connes: () => <ConnesDemo />,
-  permanent: () => <PermanentDemo />,
-  'quantum-repetition': () => <QuantumRepetitionDemo />,
-  cvp: () => <CvpDemo />,
-  ehrhart: () => <EhrhartDemo />,
-  ramsey: () => <RamseyDemo />,
-  extremal: () => <ExtremalDemo />,
-  jacobian: () => <JacobianDemo />,
-  'unit-distance': () => <UnitDistanceDemo />,
-  kakeya: () => <KakeyaDemo />,
-  'andre-oort': () => <AndreOortDemo />,
-  'cohen-lenstra': () => <CohenLenstraDemo />,
-  'erdos-728': () => <Erdos728Demo />,
-  'fields-pde': () => <FieldsPdeDemo />,
-  'flt-formalization': () => <FltFormalizationDemo />,
-  'riemann-zeros': () => <RiemannZerosDemo />,
-  'erdos-1196': () => <Erdos1196Demo />,
-  'quasi-riemann': () => <QuasiRiemannDemo />,
-  'bsd-low-corank': () => <BsdLowCorankDemo />,
-  'hilbert-tenth-q': () => <HilbertTenthDemo />,
-  'unique-games': () => <UniqueGamesDemo />,
-  'logspace-derandom': () => <LogspaceDerandomDemo />,
-  'matrix-mult': () => <MatrixMultDemo />,
-  'catalan-constant': () => <CatalanConstantDemo />,
-  'goldfeld': () => <GoldfeldDemo />,
-  'hilbert-sixteenth': () => <HilbertSixteenthDemo />,
-  'plane-five-colors': () => <PlaneFiveColorsDemo />,
-  'erdos-reciprocal': () => <ErdosReciprocalDemo />,
-  'falconer': () => <FalconerDemo />,
-  mahler: () => <MahlerDemo />,
-  'alphaproof-nexus': () => <AlphaproofNexusDemo />,
-  'mip-star-lidt': () => <MipStarLidtDemo />,
-  'ineq-dittert': () => <IneqDittertDemo />,
-  'eth-false': () => <EthFalseDemo />,
-  'local-smoothing': () => <LocalSmoothingDemo />,
-  kls: () => <KlsDemo />,
+// Each demo is its own chunk, loaded when its breakthrough page is opened.
+const MAP: Record<string, LazyExoticComponent<ComponentType>> = {
+  'sphere-packing': lazy(() => import('./SpherePackingDemo').then((m) => ({ default: m.SpherePackingDemo }))),
+  codes: lazy(() => import('./CodesDemo').then((m) => ({ default: m.CodesDemo }))),
+  'non-sofic': lazy(() => import('./NonSoficDemo').then((m) => ({ default: m.NonSoficDemo }))),
+  connes: lazy(() => import('./ConnesDemo').then((m) => ({ default: m.ConnesDemo }))),
+  permanent: lazy(() => import('./PermanentDemo').then((m) => ({ default: m.PermanentDemo }))),
+  'quantum-repetition': lazy(() => import('./QuantumRepetitionDemo').then((m) => ({ default: m.QuantumRepetitionDemo }))),
+  cvp: lazy(() => import('./CvpDemo').then((m) => ({ default: m.CvpDemo }))),
+  ehrhart: lazy(() => import('./EhrhartDemo').then((m) => ({ default: m.EhrhartDemo }))),
+  ramsey: lazy(() => import('./RamseyDemo').then((m) => ({ default: m.RamseyDemo }))),
+  extremal: lazy(() => import('./ExtremalDemo').then((m) => ({ default: m.ExtremalDemo }))),
+  jacobian: lazy(() => import('./JacobianDemo').then((m) => ({ default: m.JacobianDemo }))),
+  'unit-distance': lazy(() => import('./UnitDistanceDemo').then((m) => ({ default: m.UnitDistanceDemo }))),
+  kakeya: lazy(() => import('./KakeyaDemo').then((m) => ({ default: m.KakeyaDemo }))),
+  'andre-oort': lazy(() => import('./AndreOortDemo').then((m) => ({ default: m.AndreOortDemo }))),
+  'cohen-lenstra': lazy(() => import('./CohenLenstraDemo').then((m) => ({ default: m.CohenLenstraDemo }))),
+  'erdos-728': lazy(() => import('./Erdos728Demo').then((m) => ({ default: m.Erdos728Demo }))),
+  'fields-pde': lazy(() => import('./FieldsPdeDemo').then((m) => ({ default: m.FieldsPdeDemo }))),
+  'flt-formalization': lazy(() => import('./FltFormalizationDemo').then((m) => ({ default: m.FltFormalizationDemo }))),
+  'riemann-zeros': lazy(() => import('./RiemannZerosDemo').then((m) => ({ default: m.RiemannZerosDemo }))),
+  'erdos-1196': lazy(() => import('./Erdos1196Demo').then((m) => ({ default: m.Erdos1196Demo }))),
+  'quasi-riemann': lazy(() => import('./QuasiRiemannDemo').then((m) => ({ default: m.QuasiRiemannDemo }))),
+  'bsd-low-corank': lazy(() => import('./BsdLowCorankDemo').then((m) => ({ default: m.BsdLowCorankDemo }))),
+  'hilbert-tenth-q': lazy(() => import('./HilbertTenthDemo').then((m) => ({ default: m.HilbertTenthDemo }))),
+  'unique-games': lazy(() => import('./UniqueGamesDemo').then((m) => ({ default: m.UniqueGamesDemo }))),
+  'logspace-derandom': lazy(() => import('./LogspaceDerandomDemo').then((m) => ({ default: m.LogspaceDerandomDemo }))),
+  'matrix-mult': lazy(() => import('./MatrixMultDemo').then((m) => ({ default: m.MatrixMultDemo }))),
+  'catalan-constant': lazy(() => import('./CatalanConstantDemo').then((m) => ({ default: m.CatalanConstantDemo }))),
+  'goldfeld': lazy(() => import('./GoldfeldDemo').then((m) => ({ default: m.GoldfeldDemo }))),
+  'hilbert-sixteenth': lazy(() => import('./HilbertSixteenthDemo').then((m) => ({ default: m.HilbertSixteenthDemo }))),
+  'plane-five-colors': lazy(() => import('./PlaneFiveColorsDemo').then((m) => ({ default: m.PlaneFiveColorsDemo }))),
+  'erdos-reciprocal': lazy(() => import('./ErdosReciprocalDemo').then((m) => ({ default: m.ErdosReciprocalDemo }))),
+  'falconer': lazy(() => import('./FalconerDemo').then((m) => ({ default: m.FalconerDemo }))),
+  mahler: lazy(() => import('./MahlerDemo').then((m) => ({ default: m.MahlerDemo }))),
+  'alphaproof-nexus': lazy(() => import('./AlphaproofNexusDemo').then((m) => ({ default: m.AlphaproofNexusDemo }))),
+  'mip-star-lidt': lazy(() => import('./MipStarLidtDemo').then((m) => ({ default: m.MipStarLidtDemo }))),
+  'ineq-dittert': lazy(() => import('./IneqDittertDemo').then((m) => ({ default: m.IneqDittertDemo }))),
+  'eth-false': lazy(() => import('./EthFalseDemo').then((m) => ({ default: m.EthFalseDemo }))),
+  'local-smoothing': lazy(() => import('./LocalSmoothingDemo').then((m) => ({ default: m.LocalSmoothingDemo }))),
+  kls: lazy(() => import('./KlsDemo').then((m) => ({ default: m.KlsDemo }))),
 }
 
 export function DemoFor({ id }: { id: string }) {
-  const render = MAP[id]
-  if (!render) {
+  const Demo = MAP[id]
+  if (!Demo) {
     return (
       <div className="demo">
         <p className="feedback err">Demo not found.</p>
       </div>
     )
   }
-  return <>{render()}</>
+  return (
+    <Suspense
+      fallback={
+        <div className="demo" aria-busy="true">
+          <p className="feedback">Loading demo…</p>
+        </div>
+      }
+    >
+      <Demo />
+    </Suspense>
+  )
 }
