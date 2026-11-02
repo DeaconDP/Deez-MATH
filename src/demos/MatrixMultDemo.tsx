@@ -46,6 +46,8 @@ function randomMatrix(): M2 {
 /*  Part 3: the history of ω                                           */
 /* ------------------------------------------------------------------ */
 
+const CLAIM_YEAR = 2026.77
+
 const RECORDS = [
   { year: 1969, w: 2.8074, who: 'Strassen' },
   { year: 1978, w: 2.796, who: 'Pan' },
@@ -61,7 +63,8 @@ const RECORDS = [
   { year: 2022, w: 2.37187, who: 'Duan–Wu–Zhou' },
   { year: 2023, w: 2.37155, who: 'Vassilevska Williams–Xu–Xu–Zhou' },
   { year: 2024, w: 2.37134, who: 'Alman–Duan–Vassilevska Williams–Xu–Xu–Zhou' },
-  { year: 2026.77, w: 2.25, who: 'Oct 2026 claim, over ℂ (under examination)' },
+  { year: 2026.63, w: 2.371177, who: 'Dupont–Eisenberger–…–Vassilevska Williams–Balog' },
+  { year: CLAIM_YEAR, w: 2.25, who: 'Oct 2026 claim, over ℂ (under examination)' },
 ]
 
 const HW = 640
@@ -141,7 +144,7 @@ export function MatrixMultDemo() {
   const costs = [
     { label: 'Schoolbook n³', w: 3, color: '#ff6b6b' },
     { label: 'Strassen n^2.807', w: Math.log2(7), color: '#7eb6ff' },
-    { label: '2024 record n^2.3713', w: 2.371339, color: '#2ee6c5' },
+    { label: 'Aug 2026 record n^2.3712', w: 2.371177, color: '#2ee6c5' },
     { label: 'Oct 2026 claim n^2.25', w: 2.25, color: '#f0c95a' },
     { label: 'Floor n² (read the input)', w: 2, color: '#8aa39a' },
   ]
@@ -375,7 +378,7 @@ export function MatrixMultDemo() {
         </text>
         <path d={stairs} fill="none" stroke="#2ee6c5" strokeWidth={2.2} style={{ filter: 'drop-shadow(0 0 4px #2ee6c588)' }} />
         {shown.map((r, i) => {
-          const last = r.year > 2025
+          const last = r.year >= CLAIM_YEAR
           return (
             <circle
               key={`${r.year}-${r.who}`}
@@ -388,8 +391,8 @@ export function MatrixMultDemo() {
             />
           )
         })}
-        {shown.some((r) => r.year > 2025) && (
-          <line x1={hx(2024)} x2={hx(2026.77)} y1={hy(2.371339)} y2={hy(2.25)} stroke="#f0c95a" strokeDasharray="4 3" strokeWidth={1.6} />
+        {shown.some((r) => r.year >= CLAIM_YEAR) && (
+          <line x1={hx(2026.63)} x2={hx(CLAIM_YEAR)} y1={hy(2.371177)} y2={hy(2.25)} stroke="#f0c95a" strokeDasharray="4 3" strokeWidth={1.6} />
         )}
         {hov && (
           <g>
@@ -401,7 +404,7 @@ export function MatrixMultDemo() {
               height={36}
               rx={4}
               fill="#121a18"
-              stroke={hov.year > 2025 ? '#f0c95a' : '#2ee6c5'}
+              stroke={hov.year >= CLAIM_YEAR ? '#f0c95a' : '#2ee6c5'}
             />
             <text x={Math.min(hx(hov.year) + 16, HW - 260)} y={H_T + 19} fontSize="10.5" fill="#e8f2ef">
               {Math.floor(hov.year)} · ω &lt; {hov.w}
@@ -419,7 +422,7 @@ export function MatrixMultDemo() {
       </div>
 
       <p className="demo-callout">
-        From 1990 to 2024 the record moved only in the third decimal place. The October 2026 claim
+        From 1990 to August 2026 the record moved only in the third decimal place. The October 2026 claim
         drops it to 9/4 = 2.25 over ℂ, plus ω &lt; 2.371054886… over every fixed field. It is still
         under examination, and this app does not check it. These exponents are asymptotic: the
         hidden constants are so large that real libraries still use schoolbook or Strassen-style

@@ -69,6 +69,10 @@ export const entry: Breakthrough = {
       href: 'https://openai.com/index/sharing-ai-progress-in-mathematics/',
     },
     {
+      label: 'Dupont et al., arXiv:2608.16884, ω < 2.371177 (prior record)',
+      href: 'https://arxiv.org/abs/2608.16884',
+    },
+    {
       label: 'openai/math',
       href: 'https://github.com/openai/math',
     },
